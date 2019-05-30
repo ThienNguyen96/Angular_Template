@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'teamplate-angular';
+  title = 'ng-For';
+  listCity = ['HCM', 'HANOI', 'SEOUL', 'NEWYORK'];
+  listDataServer = ['HCM', 'HANOI', 'SEOUL', 'NEWYORK','HATINH','MIRALMAL','TOKYO'];
+
+
+  onLoadData(){
+    this.listCity = this.listDataServer;
+  }
+
+  myTrackByFunction(index, item){
+    return item;
+  }
 }
