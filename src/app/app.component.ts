@@ -7,4 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'teamplate-angular';
+  isEnabledClasses = false;
+
+  constructor(){
+
+  }
+
+  onToggleStyle(){
+    this.isEnabledClasses = ! this.isEnabledClasses;
+  }
+  setClasses(){
+    return {
+      'border-blue': this.isEnabledClasses,
+      'red': this.isEnabledClasses,
+      'pd-10': this.isEnabledClasses
+    }
+  }
 }
