@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   title = 'teamplate-angular';
   userInfo = {
     name : 'mon',
@@ -19,17 +20,26 @@ export class AppComponent {
     {
       id: 1,
       name: 'Mon',
-      address: 'HANOI'
+      phone: '42342343'
     },
     {
       id: 2,
       name: 'Messi',
-      address: 'Barcelona'
+      phone: '435345435'
     },
     {
       id: 3,
       name: 'Neymar',
-      address: 'Brazil'
+      phone: '435435'
     }
   ];
+  txtFullName = '';
+  txtPhone;
+
+  onGetFullName(value){
+    this.txtFullName = value;
+  }
+  onGetPhoneValue(value){
+    this.txtPhone = value;
+  }
 }

@@ -11,4 +11,31 @@
       Author : {{ author }} <br>
       Score: {{ score }}
     </div>
+    
+    <form role="form">
+      <legend></legend>
+    
+      <div class="form-group">
+        <label for="">Full Name:</label>
+        <input 
+          type="text"
+          class="form-control"
+          placeholder="Input field"
+          [(ngModel)]="txtFullName"
+          [ngModelOptions]="{standalone: true}"
+        >
+      </div>
+      <div>
+        <label for="">Phone:</label>
+          <input 
+            type="number"
+            class="form-control"
+            placeholder="Input field"
+            [(ngModel)]="txtPhone"
+            [ngModelOptions]="{standalone: true}"
+          >
+      </div>
+      <button type="submit" (click)="onSubmitForm()" class="btn btn-primary">Submit</button>
+    </form>
+    
 </div>
