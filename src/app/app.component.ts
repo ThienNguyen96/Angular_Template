@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  @ViewChild('txtName') name: ElementRef;
   title = 'teamplate-angular';
+
+  getData(txtName: ElementRef){
+    console.log('value', txtName); 
+  }
+  onGetData(){
+    console.log('name is', this.name.nativeElement.value);
+  }
 }
