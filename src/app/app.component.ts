@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'teamplate-angular';
+  isShowing = false;
+
+  toggleDisplay(){
+    this.isShowing = !this.isShowing;
+  }
 }
