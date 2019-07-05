@@ -4,24 +4,44 @@
     ngOnchanges & ngDoCheck
   </h1>
   
-  <div class="panel panel-success">
-      <div class="panel-heading">
-        <h3 class="panel-title">Panel title</h3>
+    <div class="col-md-6">
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title">Panel title</h3>
+        </div>
+        <div class="panel-body">
+          <ng-container *ngIf="isShowing">
+            <app-life-cycle [total]="total"></app-life-cycle>
+          </ng-container>
+          
+          <button type="button" (click)="toggleDisplay()" class="btn btn-success">Toggle Display</button>
+          <hr>
+          
+          number 1:<input type="number" [(ngModel)]="nb1" class="form-control" id="exampleInputAmount" placeholder="number1..">
+          number 2:<input type="number" [(ngModel)]="nb2"  class="form-control" id="exampleInputAmount" placeholder="number1..">
+          
+          <button type="button" class="btn btn-default" (click)="tinhTong()">Sum</button>
+        </div>
+    </div>
+    <div class="col-md-6">
+      <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Panel title</h3>
+          </div>
+          <div class="panel-body">
+            <app-other-lifecycle>
+              Value: ABCDEF
+              <h1>Value: ABCDEF</h1>
+              <h2>Value: tag</h2>
+              <h3 class="myClass">Value: h3 tag</h3>
+              <h4 id="myID">Value: h4 tag</h4>
+              <p myAttr>This is my div tag</p>
+              <p myAttr='angular'>This is my div tag with value</p>
+            </app-other-lifecycle>
+          </div>
       </div>
-      <div class="panel-body">
-        <ng-container *ngIf="isShowing">
-          <app-life-cycle [total]="total"></app-life-cycle>
-        </ng-container>
-        
-        <button type="button" (click)="toggleDisplay()" class="btn btn-success">Toggle Display</button>
-        <hr>
-        
-        number 1:<input type="number" [(ngModel)]="nb1" class="form-control" id="exampleInputAmount" placeholder="number1..">
-        number 2:<input type="number" [(ngModel)]="nb2"  class="form-control" id="exampleInputAmount" placeholder="number1..">
-        
-        <button type="button" class="btn btn-default" (click)="tinhTong()">Sum</button>
-        
-      </div>
+      
+    </div>
   </div>
   
 

@@ -1,0 +1,18 @@
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Other LifeCycle</h3>
+    </div>
+    <div class="panel-body">
+      <h3>Tim Hieu ng-content</h3>
+      <ng-content></ng-content>
+      <hr>
+      <ng-content select=".myClass"></ng-content>
+      <hr>
+      <ng-content #myID></ng-content>
+      <hr>
+      <ng-content select="[myAttr]"></ng-content>
+      <hr>
+      <ng-content select="[myAttr=angular4]"></ng-content>
+    </div>
+</div>
