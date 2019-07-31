@@ -30,14 +30,28 @@
           </div>
           <div class="panel-body">
             <app-other-lifecycle>
-              Value: ABCDEF
-              <h1>Value: ABCDEF</h1>
-              <h2>Value: tag</h2>
-              <h3 class="myClass">Value: h3 tag</h3>
-              <h4 id="myID">Value: h4 tag</h4>
-              <p myAttr>This is my div tag</p>
-              <p myAttr='angular'>This is my div tag with value</p>
+              <h1 #valueKey >{{ content }}</h1>
             </app-other-lifecycle>
+            <input type="text" #text class="form-control" />
+            <button type="button" class="btn btn-danger" (click)="onClick(text.value)">Submit</button>
+          </div>
+      </div>
+      
+    </div>
+    <div class="col-md-6">
+      
+      <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">ngAfterViewInit -  ngAfterViewChecked</h3>
+          </div>
+          <div class="panel-body">
+            <ul class="list-group" #arrAfter>
+              <li class="list-group-item" *ngFor="let item of products">
+                {{ item.id }} - {{ item.name }}
+              </li>
+            </ul>
+            <input type="text" #product class="form-control" />
+            <button type="button" class="btn btn-danger" (click)="addProduct(product.value)">add Product</button>
           </div>
       </div>
       
