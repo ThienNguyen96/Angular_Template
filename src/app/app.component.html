@@ -1,12 +1,24 @@
+<app-header></app-header>
 <div class="container">
   <div class="row">
-    <h1 class="text-center">{{ title }}</h1>
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <app-first></app-first>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"></h3>
+          </div>
+          <div class="panel-body">
+            <router-outlet></router-outlet>
+          </div>
+      </div>
     </div>
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <app-second></app-second>
-    </div>
-    
   </div>
 </div>
+<hr>
+
+<!-- <button type="button" class="btn btn-success" [routerLink]="['/index']">Home</button>
+<button type="button" class="btn btn-primary" [routerLink]="['/contact']">Contact</button>
+<button type="button" class="btn btn-danger" [routerLink]="['/about']">About</button> -->
+
+<button type="button" class="btn btn-success" (click)="navigate('index')">Home</button>
+<button type="button" class="btn btn-primary" (click)="navigate('contact')">Contact</button>
+<button type="button" class="btn btn-danger" (click)="navigate('about')">About</button>

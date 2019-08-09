@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <label>Name:</label>
+    <input type="text" [(ngModel)]="name" name="name" class="form-control">
+    <label>Price:</label>
+    <input type="text" [(ngModel)]="price" name="name" class="form-control">
+    <button
+      type="button"
+      class="btn btn-success"
+      [routerLink]="['/products']"
+      [queryParams]="{name: name ? name : '', price: price ? price : ''}"
+    >Search</button>
+    <button
+      type="button"
+      class="btn btn-success"
+      (click)="onSearch()"
+    >Search 2</button>
+  </div>
+</div>
+<hr>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of products; let i = index" [routerLink]="['/products', item.id]">
+      <td>{{ item.id}}</td>
+      <td>{{ item.name}}</td>
+      <td>{{ item.price | currency: 'VND' : true}}</td>
+      <td>{{ item.status ? 'Active' : 'Deactive'}}</td>
+    </tr>
+  </tbody>
+</table>
+
