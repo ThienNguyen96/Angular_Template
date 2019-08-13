@@ -1,40 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
-import { RouterModule, Routes } from '@angular/router'; // import for router
-import {appRoutes} from './app.routes';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { AboutComponent } from './components/about/about.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { HomeComponent } from './components/home/home.component';
-import { ErrorComponent } from './components/error/error.component';
-import { ProductsComponent } from './components/products/products.component';
-
-import {ProductService} from './service/product.service';
-import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DrivenFormComponent } from './components/driven-form/driven-form.component';
+import { ErrorValidateComponent } from './components/error-validate/error-validate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    AboutComponent,
-    ContactComponent,
-    HomeComponent,
-    ErrorComponent,
-    ProductsComponent,
-    ProductDetailComponent,
+    DrivenFormComponent,
+    ErrorValidateComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    ReactiveFormsModule,
   ],
-  providers: [ProductService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

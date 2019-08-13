@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import {Product} from './modal/product.class';
-import {ProductService} from './service/product.service';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,11 +9,9 @@ import {ProductService} from './service/product.service';
 export class AppComponent{
 
   title = 'Routing';
-  products: Product[] = [];
 
   constructor(
     private router: Router,
-    public productService: ProductService
   ){
 
   }
