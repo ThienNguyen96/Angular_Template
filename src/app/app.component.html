@@ -1,18 +1,56 @@
 <div class="container">
   <div class="row">
-    
-    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Completed</th>
+              <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let todo of todos">
+            <td> {{ todo.id}}</td>
+            <td> {{ todo.title}}</td>
+            <td> {{ todo.completed === 'true' ? 'Completed' : 'In-Progress'}}</td>
+            <td>
+              <button type="button" class="btn btn-primary" (click)="onEditItem(todo)">Update</button>
+              <button type="button" class="btn btn-danger" (click)="onDeleteItem(todo.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
       
-      <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Template Driven Form</h3>
-          </div>
-          <div class="panel-body">
-            <app-driven-form></app-driven-form>
-          </div>
-      </div>
+      <form>
+        <legend>ADD TODO</legend>
       
+        <div class="form-group">
+          <label for="">Title</label>
+          <input type="text" class="form-control" [(ngModel)]="title" [ngModelOptions]="{standalone: true}">
+        </div>
+        <select class="form-control" [(ngModel)]="completed" [ngModelOptions]="{standalone: true}">
+          <option value="true">Completed</option>
+          <option value="false">In-Progress</option>
+        </select>
+        <button type="button" class="btn btn-primary" (click)="onAddTodo()">Add</button>
+      </form>
+
+      <form *ngIf="todo">
+          <legend>EDIT TODO</legend>
+        
+          <div class="form-group">
+            <label for="">Title</label>
+            <input type="text" class="form-control" [(ngModel)]="todo.title" [ngModelOptions]="{standalone: true}">
+          </div>
+          <select class="form-control" [(ngModel)]="todo.completed" [ngModelOptions]="{standalone: true}">
+            <option value="true">Completed</option>
+            <option value="false">In-Progress</option>
+          </select>
+          <button type="button" class="btn btn-primary" (click)="onUpdateTodo()">Save</button>
+        </form>
     </div>
-    
   </div>
 </div>

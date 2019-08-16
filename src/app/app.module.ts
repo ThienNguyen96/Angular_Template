@@ -1,25 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { DrivenFormComponent } from './components/driven-form/driven-form.component';
-import { ErrorValidateComponent } from './components/error-validate/error-validate.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TodoService } from './services/todo.service';
+import { FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DrivenFormComponent,
-    ErrorValidateComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
